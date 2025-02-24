@@ -1,0 +1,242 @@
+:root {
+  --bg-color: hwb(60 97% 2%);
+  --text-color: rgba(20, 20, 19, 1);
+  --header-bg: #FFFFFF;
+  --header-text: rgba(20, 20, 19, 1);
+  --shadow-color: rgba(0, 0, 0, 0.10);
+  --form-bg: #FFFFFF;
+  --form-border: #D1D5DB;
+  --button-bg: #141413;
+  --button-text: #FAFAF8;
+  --button-text-recipe: #FAFAF8;
+  --recipe-bg: #F0EFEB;
+  --recipe-text: #6B7280;
+  --delete-btn-hover: #ff2a2a;
+}
+
+.dark {
+  --bg-color: #181818;
+  --text-color: #EAEAEA;
+  --header-bg: #222;
+  --header-text: #FFFFFF;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --form-bg: #2A2A2A;
+  --form-border: #555;
+  --button-bg: #EAEAEA;
+  --button-text: #141413;
+  --button-text-recipe: #FAFAF8;
+  --recipe-bg: #333;
+  --recipe-text: #BBBBBB;
+  --delete-btn-hover: #FF5A5A;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+main {
+  padding: 170px 80px 50px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 16px;
+  background-color: var(--header-bg);
+  box-shadow: 0px 1px 3px 0px var(--shadow-color), 0px 1px 2px 0px var(--shadow-color);
+}
+
+
+header div {
+  width: 226px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+header p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 60px;
+  letter-spacing: -5%;
+  color: var(--header-text);
+  margin: 0;
+  cursor: pointer;
+}
+
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  height: 38px;
+}
+
+.add-ingredient-form>input {
+  border-radius: 6px;
+  border: 1px solid var(--form-border);
+  background: var(--form-bg);
+  color: var(--text-color);
+  padding: 9px 13px;
+  box-shadow: 0px 1px 2px 0px var(--shadow-color);
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 400px;
+}
+
+.add-ingredient-form>button {
+  font-family: Inter, sans-serif;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  width: 150px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-ingredient-form>button:hover {
+  opacity: 0.9;
+}
+
+.add-ingredient-form>button::before {
+  content: "+";
+  margin-right: 5px;
+}
+
+ul.ingredients-list {
+  margin-bottom: 48px;
+}
+
+ul.ingredients-list>li {
+  color: var(--recipe-text);
+  line-height: 28px;
+}
+
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--recipe-bg);
+  padding: 10px 28px;
+  margin-bottom: 60px;
+}
+
+.get-recipe-container h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.get-recipe-container p {
+  color: var(--recipe-text);
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+
+.get-recipe-container button {
+  border: none;
+  border-radius: 6px;
+  background: #D17557;
+  box-shadow: 0px 1px 2px 0px var(--shadow-color);
+  color: var(--button-text-recipe);
+  padding: 9px 17px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 5px;
+  line-height: 20px;
+}
+
+.get-recipe-container button:hover {
+  opacity: 0.9;
+}
+
+.suggested-recipe-container {
+  color: var(--text-color);
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.suggested-recipe-container ul li,
+.suggested-recipe-container ol li {
+  margin-bottom: 8px;
+}
+
+.loading-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 80px 30px 10px;
+  }
+}
+
+.delete-btn {
+  border: none;
+  padding: 1px 3px;
+  border-radius: 15px;
+  background-color: #14141300;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-left: 10px;
+  color: var(--text-color)
+}
+
+.ingredient-item:hover .delete-btn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delete-btn:hover {
+  color: var(--delete-btn-hover);
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  background: var(--header-bg);
+  color: var(--text-color);
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -1px 3px 0px var(--shadow-color);
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
