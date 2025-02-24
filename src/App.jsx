@@ -24,11 +24,11 @@ function App() {
 
 
   return (
-    <>
+    <div className="container">
       <Header darkMode={darkMode} toggleTheme={toggleTheme} />
       <Main />
       <Footer />
-    </>
+    </div>
   );
 }
 
