@@ -41,6 +41,7 @@ export default function Main() {
 
     function deleteIngredient(ingredientToDelete) {
         setIngredients(prevIngredients => prevIngredients.filter(prevIngredient => prevIngredient !== ingredientToDelete))
+        setRecipe("")
     }
 
     async function getRecipe() {
