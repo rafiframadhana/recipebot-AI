@@ -80,4 +80,3 @@ For any inquiries or suggestions, reach out via **rafiframadhana.cs@gmail.com** 
 ---
 
 🔥 Happy Cooking with **RecipeBot AI**! 🚀  
-```
