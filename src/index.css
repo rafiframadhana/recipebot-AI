@@ -258,13 +258,18 @@ footer a:hover {
   text-decoration: underline;
 }
 
+
 @media (max-width: 1024px) {
+  .container {
+    min-height: 0;
+  }
+
   main {
-    padding: 120px 40px 30px;
+    padding: 130px 40px 30px;
   }
 
   footer {
-    padding: 12px;
+    display: none;
   }
 
   header img {
@@ -277,7 +282,6 @@ footer a:hover {
     font-size: 20px;
     letter-spacing: -5%;
   }
-
 
   .add-ingredient-form {
     height: 40px;
@@ -292,34 +296,25 @@ footer a:hover {
 
 @media (max-width: 768px) {
   main {
-    padding: 140px 20px 20px;
-
-  }
-
-  footer {
-    display: none;
+    padding: 130px 20px 20px;
   }
 
   header img {
     width: 35px;
-    height: auto;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   header p {
     font-size: 18px;
-    letter-spacing: -5%;
-  }
-
-
-  .add-ingredient-form {
-    height: 40px;
-    margin-bottom: 40px;
   }
 
   .add-ingredient-form>button {
     width: 80px;
     font-size: 0.75rem;
+  }
+
+  .icon svg {
+    width: 24px;
   }
 }
 
@@ -328,21 +323,31 @@ footer a:hover {
     padding: 130px 18px 15px;
   }
 
-  footer {
-    display: none;
-  }
-
   header img {
     width: 26px;
-    height: auto;
-    margin-right: 10px;
   }
 
   header p {
     font-size: 16px;
   }
 
-  .icon svg{
-    width: 25px;
+  .icon svg {
+    width: 22px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  header img {
+    width: 20px;
+    margin-right: 3px;
+  }
+
+  header p {
+    font-size: 11px;
+  }
+
+  .icon svg {
+    width: 16px;
   }
 }
